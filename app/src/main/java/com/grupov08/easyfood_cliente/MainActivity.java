@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this, "Btn Pedidos Anteriores", Toast.LENGTH_SHORT).show();
     }
 
+    public void ubicarDomiciliario(View v)
+    {
+
+    }
+
     public void iniciarSesion (View v)
     {
         Toast.makeText(MainActivity.this, "Btn Iniciar Sesión", Toast.LENGTH_SHORT).show();

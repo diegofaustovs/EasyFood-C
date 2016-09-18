@@ -46,4 +46,14 @@
         android:layout_below="@+id/btn_domicilio_main"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ubicar_domiciliario"
+        android:id="@+id/btn_ubicar_domiciliario"
+        android:layout_below="@+id/btn_mis_pedidos_main"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:onClick="ubicarDomiciliario" />
+
 </RelativeLayout>

@@ -6,4 +6,9 @@
     <string name="title_activity_map">Map</string>
     <string name="mis_pedidos">Mis Pedidos</string>
     <string name="hola_mundo">Hola Mundo</string>
+    <string name="local_pedido">Local:</string>
+    <string name="producto_pedido">Producto:</string>
+    <string name="agregar">Agregar</string>
+    <string name="realizar_pedido_label">Realizar Pedido</string>
+    <string name="ubicar_domiciliario">Ubicar Domiciliario</string>
 </resources>

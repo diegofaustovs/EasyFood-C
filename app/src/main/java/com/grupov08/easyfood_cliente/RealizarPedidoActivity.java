@@ -2,6 +2,7 @@ package com.grupov08.easyfood_cliente;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class RealizarPedidoActivity extends AppCompatActivity {
 
@@ -9,5 +10,15 @@ public class RealizarPedidoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realizar_pedido);
+    }
+
+    public void solicitarPedido(View v)
+    {
+
+    }
+
+    public void agregarProducto(View v)
+    {
+
     }
 }

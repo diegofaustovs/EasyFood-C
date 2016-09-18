@@ -13,19 +13,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/textView"
+        android:text="@string/local_pedido"
+        android:id="@+id/label_local_pedido"
         android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:labelFor="@id/spinner_Local_pedido" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_producto_pedido"
+        android:layout_below="@+id/spinner_Local_pedido"
+        android:layout_alignLeft="@+id/spinner_Local_pedido"
+        android:layout_alignStart="@+id/spinner_Local_pedido" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_Local_pedido"
+        android:layout_alignTop="@+id/label_local_pedido"
+        android:layout_toEndOf="@+id/label_local_pedido"
+        android:layout_alignLeft="@+id/btn_pedir_pedido"
+        android:layout_alignStart="@+id/btn_pedir_pedido" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/producto_pedido"
+        android:id="@+id/label_producto_pedido"
+        android:layout_below="@+id/spinner_Local_pedido"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/textView"
-        android:inputType="textAutoCorrect"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/realizar_pedido_label"
+        android:id="@+id/btn_pedir_pedido"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="solicitarPedido" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lista_pedido"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/btn_pedir_pedido"
+        android:layout_below="@+id/btn_agregar_producto" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/agregar"
+        android:id="@+id/btn_agregar_producto"
+        android:onClick="agregarProducto"
+        android:layout_below="@+id/spinner_producto_pedido"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
