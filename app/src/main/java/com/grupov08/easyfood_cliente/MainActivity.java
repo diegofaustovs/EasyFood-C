@@ -1,8 +1,8 @@
 package com.grupov08.easyfood_cliente;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.SmsManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,16 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void realizarPedido (View v)
     {
-        Toast.makeText(MainActivity.this, "Btn Realizar Pedido", Toast.LENGTH_SHORT).show();
-        try
-        {
-            SmsManager.getDefault().sendTextMessage("123456",null,"Prueba Mensaje",null,null);
-        }
-        catch (Exception e)
-        {
-            Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-
+        Intent i = new Intent(this, RealizarPedidoActivity.class);
+        startActivity(i);
     }
 
     public void pedidosAnteriores (View v)
@@ -35,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ubicarDomiciliario(View v)
     {
-
+        Toast.makeText(MainActivity.this, "Btn Ubicar Domiciliario", Toast.LENGTH_SHORT).show();
     }
 
     public void iniciarSesion (View v)
