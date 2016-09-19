@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/realizar_pedido"
         android:id="@+id/btn_domicilio_main"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="31dp"
         android:onClick="realizarPedido"
         android:layout_below="@+id/label_welcome_main"
         android:layout_centerHorizontal="true" />
@@ -51,9 +51,58 @@
         android:layout_height="wrap_content"
         android:text="@string/ubicar_domiciliario"
         android:id="@+id/btn_ubicar_domiciliario"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="33dp"
         android:onClick="ubicarDomiciliario"
         android:layout_below="@+id/btn_domicilio_main"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sincronizar"
+        android:id="@+id/button"
+        android:onClick="sincronizar"
+        android:layout_below="@+id/puerto_server"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="URL Servidor"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/url_server"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/btn_ubicar_domiciliario"
+        android:layout_alignStart="@+id/btn_ubicar_domiciliario"
+        android:layout_alignRight="@+id/btn_ubicar_domiciliario"
+        android:layout_alignEnd="@+id/btn_ubicar_domiciliario" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Puerto"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/url_server"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/puerto_server"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/url_server"
+        android:layout_alignStart="@+id/url_server"
+        android:layout_alignRight="@+id/url_server"
+        android:layout_alignEnd="@+id/url_server" />
 
 </RelativeLayout>

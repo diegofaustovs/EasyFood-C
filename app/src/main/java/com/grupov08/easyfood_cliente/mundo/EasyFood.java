@@ -1,5 +1,10 @@
 package com.grupov08.easyfood_cliente.mundo;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +26,6 @@ public class EasyFood {
         latitud = "L1";
         longitud = "L2";
         ubicacion_descr = "Desc 1";
-        mock();
     }
 
     public static EasyFood getInstancia() {
@@ -65,6 +69,17 @@ public class EasyFood {
 
     public void setUbicacion_descr(String ubicacion_descr) {
         this.ubicacion_descr = ubicacion_descr;
+    }
+
+    public void sincronizar(String direccionServidor, int puerto) throws IOException
+    {
+        Sincronizador s = new Sincronizador(direccionServidor, puerto);
+        s.start();
+    }
+
+    public void agregarLocal(Local l)
+    {
+        locales.add(l);
     }
 
     private void mock() {
