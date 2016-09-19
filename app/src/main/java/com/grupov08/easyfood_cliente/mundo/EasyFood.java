@@ -1,7 +1,5 @@
 package com.grupov08.easyfood_cliente.mundo;
 
-import android.widget.ListAdapter;
-
 import java.util.ArrayList;
 
 /**
@@ -12,6 +10,7 @@ public class EasyFood {
     private static EasyFood instancia;
 
     private ArrayList<Local> locales;
+    private String telefono_domiciliario;
 
     public EasyFood() {
         locales = new ArrayList<>();
@@ -25,12 +24,16 @@ public class EasyFood {
             return instancia;
     }
 
-    public void realizar_pedido(Local l, ListAdapter listAdapter) {
-
-    }
-
     public ArrayList<Local> getLocales() {
         return locales;
+    }
+
+    public String getTelefono_domiciliario() {
+        return telefono_domiciliario;
+    }
+
+    public void setTelefono_domiciliario(String telefono_domiciliario) {
+        this.telefono_domiciliario = telefono_domiciliario;
     }
 
     private void mock() {

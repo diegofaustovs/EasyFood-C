@@ -46,11 +46,16 @@ public class RealizarPedidoActivity extends AppCompatActivity implements Adapter
 
     public void solicitarPedido(View v)
     {
-        easyFood.realizar_pedido(((Local)sp_local.getSelectedItem()),
-                lista_pedido.getAdapter());
         try
         {
-            SmsManager.getDefault().sendTextMessage("123456",null,"Prueba Mensaje",null,null);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < lista_pedido.getAdapter().getCount(); i++) {
+                sb.append(((Producto)lista_pedido.getAdapter().getItem(i)).getNombre());
+                sb.append("_");
+            }
+
+            SmsManager.getDefault().sendTextMessage("5556",null,"*EF:P:"+ ((Local)sp_local.getSelectedItem()).getNombre() +
+                    "**" + sb.toString(),null,null);
         }
         catch (Exception e)
         {
@@ -62,6 +67,7 @@ public class RealizarPedidoActivity extends AppCompatActivity implements Adapter
     {
         productos.add((Producto)((Spinner) findViewById(R.id.spinner_producto_pedido)).getSelectedItem());
         lista_pedido.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, productos));
+        sp_local.setEnabled(false);
     }
 
     @Override
@@ -77,5 +83,6 @@ public class RealizarPedidoActivity extends AppCompatActivity implements Adapter
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         ((ArrayAdapter)parent.getAdapter()).remove(parent.getItemAtPosition(position));
+        sp_local.setClickable(false);
     }
 }

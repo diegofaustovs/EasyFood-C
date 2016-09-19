@@ -1,17 +1,32 @@
 package com.grupov08.easyfood_cliente;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int MY_PERMISSIONS_REQUEST = 12;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS)
+                != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.RECEIVE_SMS},
+                    MY_PERMISSIONS_REQUEST);
+        }
+
     }
 
     public void realizarPedido (View v)
@@ -28,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ubicarDomiciliario(View v)
     {
-        Toast.makeText(MainActivity.this, "Btn Ubicar Domiciliario", Toast.LENGTH_SHORT).show();
+        SmsManager.getDefault().sendTextMessage("5556",null,"*EF:U:Location",null,null);
     }
 
     public void iniciarSesion (View v)
