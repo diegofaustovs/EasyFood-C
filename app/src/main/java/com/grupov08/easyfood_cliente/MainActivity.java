@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void pedidosAnteriores (View v)
     {
-        Toast.makeText(MainActivity.this, "Btn Pedidos Anteriores", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, PedidosActivity.class);
+        startActivity(i);
     }
 
     public void ubicarDomiciliario(View v)
