@@ -54,7 +54,7 @@ public class RealizarPedidoActivity extends AppCompatActivity implements Adapter
                 sb.append("_");
             }
 
-            SmsManager.getDefault().sendTextMessage("5556",null,"*EF:P:"+ ((Local)sp_local.getSelectedItem()).getNombre() +
+            SmsManager.getDefault().sendTextMessage(EasyFood.getInstancia().getTelefono_domiciliario(),null,"*EF:P:"+ ((Local)sp_local.getSelectedItem()).getNombre() +
                     "**" + sb.toString(),null,null);
         }
         catch (Exception e)

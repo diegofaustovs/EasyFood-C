@@ -11,9 +11,16 @@ public class EasyFood {
 
     private ArrayList<Local> locales;
     private String telefono_domiciliario;
+    private String latitud;
+    private String longitud;
+    private String ubicacion_descr;
 
     public EasyFood() {
         locales = new ArrayList<>();
+        telefono_domiciliario = "5556";
+        latitud = "L1";
+        longitud = "L2";
+        ubicacion_descr = "Desc 1";
         mock();
     }
 
@@ -34,6 +41,30 @@ public class EasyFood {
 
     public void setTelefono_domiciliario(String telefono_domiciliario) {
         this.telefono_domiciliario = telefono_domiciliario;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public String getUbicacion_descr() {
+        return ubicacion_descr;
+    }
+
+    public void setUbicacion_descr(String ubicacion_descr) {
+        this.ubicacion_descr = ubicacion_descr;
     }
 
     private void mock() {

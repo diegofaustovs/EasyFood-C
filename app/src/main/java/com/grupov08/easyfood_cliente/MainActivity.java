@@ -10,6 +10,8 @@ import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Toast;
 
+import com.grupov08.easyfood_cliente.mundo.EasyFood;
+
 public class MainActivity extends AppCompatActivity {
 
     private int MY_PERMISSIONS_REQUEST = 12;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ubicarDomiciliario(View v)
     {
-        SmsManager.getDefault().sendTextMessage("5556",null,"*EF:U:Location",null,null);
+        SmsManager.getDefault().sendTextMessage(EasyFood.getInstancia().getTelefono_domiciliario(),null,"*EF:U:Location",null,null);
     }
 
     public void iniciarSesion (View v)
